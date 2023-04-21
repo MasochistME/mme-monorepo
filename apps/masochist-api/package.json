@@ -1,5 +1,5 @@
 {
-  "name": "masochist-api",
+  "name": "@masochistme/api",
   "version": "4.0.0",
   "description": "MasochistME API",
   "main": "dist/index.js",

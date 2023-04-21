@@ -14,8 +14,6 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
-    "dev": "nodemon --exec npx tsx __example/index.ts",
-    "dev:test": "npx tsx lib/v2/api/race/__tests__/index.ts",
     "lint": "eslint . --ext .ts",
     "test": "echo TODO",
     "semantic-release": "semantic-release",
