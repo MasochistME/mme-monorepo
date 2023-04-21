@@ -1,7 +1,7 @@
-import { cache } from "fetus";
-import { getFilteredChoices } from "commands/_utils";
-import { shortenString } from "utils";
-import { Console } from "console";
+import { cache } from 'fetus';
+import { getFilteredChoices } from 'commands/_utils';
+import { shortenString } from 'utils';
+import { Console } from 'console';
 
 /**
  * Filter the badge choice list based on the user provided autocomplete value.
@@ -9,19 +9,19 @@ import { Console } from "console";
  * @return ApplicationCommandOptionChoiceData[]
  */
 export const getBadgeChoices = (focused: string) => {
-  const choices = cache.badges.map(badge => {
-    const game = cache.games.find(g => g.id === badge.gameId);
-    const nameFull = `${(game?.name ?? "UNKNOWN GAME").toUpperCase()} - ${
-      badge.name
-    } (${badge.description})`;
-    const name = shortenString(nameFull, 100);
-    return {
-      name,
-      value: String(badge._id),
-    };
-  });
+	const choices = cache.badges.map(badge => {
+		const game = cache.games.find(g => g.id === badge.gameId);
+		const nameFull = `${(game?.name ?? 'UNKNOWN GAME').toUpperCase()} - ${
+			badge.name
+		} (${badge.description})`;
+		const name = shortenString(nameFull, 100);
+		return {
+			name,
+			value: String(badge._id),
+		};
+	});
 
-  return getFilteredChoices(choices, focused);
+	return getFilteredChoices(choices, focused);
 };
 
 /**
@@ -30,15 +30,15 @@ export const getBadgeChoices = (focused: string) => {
  * @return ApplicationCommandOptionChoiceData[]
  */
 export const getGameChoices = (focused: string) => {
-  const choices = cache.games.map(game => {
-    const name = shortenString(game.name, 100);
-    return {
-      name,
-      value: String(game.id),
-    };
-  });
+	const choices = cache.games.map(game => {
+		const name = shortenString(game.name, 100);
+		return {
+			name,
+			value: String(game.id),
+		};
+	});
 
-  return getFilteredChoices(choices, focused);
+	return getFilteredChoices(choices, focused);
 };
 
 /**
@@ -47,15 +47,15 @@ export const getGameChoices = (focused: string) => {
  * @return ApplicationCommandOptionChoiceData[]
  */
 export const getMemberChoices = (focused: string) => {
-  const choices = cache.members.map(member => {
-    const name = shortenString(member.name, 100);
-    return {
-      name,
-      value: String(member.id),
-    };
-  });
+	const choices = cache.members.map(member => {
+		const name = shortenString(member.name, 100);
+		return {
+			name,
+			value: String(member.id),
+		};
+	});
 
-  return getFilteredChoices(choices, focused);
+	return getFilteredChoices(choices, focused);
 };
 
 /**
@@ -64,13 +64,13 @@ export const getMemberChoices = (focused: string) => {
  * @return ApplicationCommandOptionChoiceData[]
  */
 export const getRaceChoices = (focused: string) => {
-  const choices = cache.races.map(race => {
-    const name = shortenString(race.name, 100);
-    return {
-      name,
-      value: String(race._id),
-    };
-  });
+	const choices = cache.races.map(race => {
+		const name = shortenString(race.name, 100);
+		return {
+			name,
+			value: String(race._id),
+		};
+	});
 
-  return getFilteredChoices(choices, focused);
+	return getFilteredChoices(choices, focused);
 };

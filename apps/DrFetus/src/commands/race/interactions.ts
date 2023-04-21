@@ -1,8 +1,8 @@
 import {
-  AutocompleteInteraction,
-  ApplicationCommandOptionChoiceData,
-} from "discord.js";
-import { getRaceChoices } from "commands/_utils/choices";
+	AutocompleteInteraction,
+	ApplicationCommandOptionChoiceData,
+} from 'discord.js';
+import { getRaceChoices } from 'commands/_utils/choices';
 
 /**
  * Handles autocompletion for the "race" command.
@@ -10,14 +10,14 @@ import { getRaceChoices } from "commands/_utils/choices";
  * @return void
  */
 export const raceAutocomplete = async (
-  interaction: AutocompleteInteraction,
+	interaction: AutocompleteInteraction,
 ): Promise<void> => {
-  if (!interaction.isAutocomplete()) return;
+	if (!interaction.isAutocomplete()) return;
 
-  let choices: ApplicationCommandOptionChoiceData[] = [];
-  const focused = interaction.options.getFocused(true);
+	let choices: ApplicationCommandOptionChoiceData[] = [];
+	const focused = interaction.options.getFocused(true);
 
-  if (focused.name === "race") choices = getRaceChoices(focused.value);
+	if (focused.name === 'race') choices = getRaceChoices(focused.value);
 
-  await interaction.respond(choices);
+	await interaction.respond(choices);
 };

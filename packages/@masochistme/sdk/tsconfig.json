@@ -5,6 +5,9 @@
     "rootDir": "./lib",
     "isolatedModules": false,
     "checkJs": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist"
   },
   "include": ["lib/**/*"],
   "exclude": ["node_modules", "**/*/__tests__"],

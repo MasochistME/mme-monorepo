@@ -1,24 +1,24 @@
-import { ObjectId, WithId } from "mongodb";
+import { ObjectId, WithId } from 'mongodb';
 
 export type Meme = WithId<{
-  meme: string;
+	meme: string;
 }>;
 
 export type CacheItem = {
-  name: string;
-  id: string | number;
+	name: string;
+	id: string | number;
 };
 
 export interface CacheMember extends CacheItem {
-  discordId: string | null;
+	discordId: string | null;
 }
 
 export interface CacheGame extends CacheItem {
-  description: string;
+	description: string;
 }
 
 export interface CacheOption {
-  _id: ObjectId;
-  option: string;
-  value: any;
+	_id: ObjectId;
+	option: string;
+	value: any;
 }

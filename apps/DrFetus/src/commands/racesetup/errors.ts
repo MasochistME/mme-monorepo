@@ -1,4 +1,4 @@
-import { DiscordInteraction, getErrorEmbed } from "arcybot";
+import { DiscordInteraction, getErrorEmbed } from 'arcybot';
 
 /**
  * Handles error caused by race ending before it starts.
@@ -6,13 +6,13 @@ import { DiscordInteraction, getErrorEmbed } from "arcybot";
  * @return void
  */
 export const errorEndsBeforeStart = (interaction: DiscordInteraction) => {
-  interaction.reply(
-    getErrorEmbed(
-      "Error",
-      "A race can _not_ have a later start date than end date, you moron.",
-    ),
-  );
-  return;
+	interaction.reply(
+		getErrorEmbed(
+			'Error',
+			'A race can _not_ have a later start date than end date, you moron.',
+		),
+	);
+	return;
 };
 
 /**
@@ -21,13 +21,13 @@ export const errorEndsBeforeStart = (interaction: DiscordInteraction) => {
  * @return void
  */
 export const errorRaceInThePast = (interaction: DiscordInteraction) => {
-  interaction.reply(
-    getErrorEmbed(
-      "Error",
-      "Ever heard about time continuity? A race can _not_ take place in the past, silly.",
-    ),
-  );
-  return;
+	interaction.reply(
+		getErrorEmbed(
+			'Error',
+			'Ever heard about time continuity? A race can _not_ take place in the past, silly.',
+		),
+	);
+	return;
 };
 
 /**
@@ -37,21 +37,21 @@ export const errorRaceInThePast = (interaction: DiscordInteraction) => {
  * @return void
  */
 export const errorNegativeTimers = (
-  interaction: DiscordInteraction,
-  downloadGrace: number,
-  uploadGrace: number,
-  playLimit?: number,
+	interaction: DiscordInteraction,
+	downloadGrace: number,
+	uploadGrace: number,
+	playLimit?: number,
 ) => {
-  interaction.reply(
-    getErrorEmbed(
-      "Wrong time provided",
-      `There is something very wrong with the timers you provided.\n
+	interaction.reply(
+		getErrorEmbed(
+			'Wrong time provided',
+			`There is something very wrong with the timers you provided.\n
       **Download grace period** - \`\`${downloadGrace}s\`\`\n**Upload grace period** - \`\`${uploadGrace}s\`\`
-      ${playLimit ? `**Play time limit** - ${playLimit}m` : ""}\n
+      ${playLimit ? `**Play time limit** - ${playLimit}m` : ''}\n
       At least one of those looks _seriously wrong_.`,
-    ),
-  );
-  return;
+		),
+	);
+	return;
 };
 
 /**
@@ -61,14 +61,14 @@ export const errorNegativeTimers = (
  * @return void
  */
 export const errorWrongDownloadLink = (
-  interaction: DiscordInteraction,
-  link: string,
+	interaction: DiscordInteraction,
+	link: string,
 ) => {
-  interaction.reply(
-    getErrorEmbed(
-      "Wrong download link",
-      `${link} → Does _this_ look like a link to you?`,
-    ),
-  );
-  return;
+	interaction.reply(
+		getErrorEmbed(
+			'Wrong download link',
+			`${link} → Does _this_ look like a link to you?`,
+		),
+	);
+	return;
 };

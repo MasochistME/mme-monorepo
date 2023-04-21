@@ -1,4 +1,4 @@
-import { ApplicationCommandOptionChoiceData } from "discord.js";
+import { ApplicationCommandOptionChoiceData } from 'discord.js';
 
 /**
  * Filter the choice list based on the user provided autocomplete value.
@@ -7,14 +7,14 @@ import { ApplicationCommandOptionChoiceData } from "discord.js";
  * @return ApplicationCommandOptionChoiceData[]
  */
 export const getFilteredChoices = (
-  choices: ApplicationCommandOptionChoiceData[],
-  focused: string,
+	choices: ApplicationCommandOptionChoiceData[],
+	focused: string,
 ) => {
-  return choices
-    .filter(choice =>
-      focused.length
-        ? choice.name.toLowerCase().includes(focused.toLowerCase())
-        : true,
-    )
-    .slice(0, 24);
+	return choices
+		.filter(choice =>
+			focused.length
+				? choice.name.toLowerCase().includes(focused.toLowerCase())
+				: true,
+		)
+		.slice(0, 24);
 };

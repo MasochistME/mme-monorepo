@@ -1,7 +1,7 @@
-import { DiscordInteraction } from "arcybot";
-import { ButtonInteraction, GuildMemberRoleManager, Role } from "discord.js";
+import { DiscordInteraction } from 'arcybot';
+import { ButtonInteraction, GuildMemberRoleManager, Role } from 'discord.js';
 
-import { getOption } from "utils";
+import { getOption } from 'utils';
 
 /**
  * Checks if the passed string is a link (starts with http).
@@ -9,7 +9,7 @@ import { getOption } from "utils";
  * @return boolean
  */
 export const isLink = (supposedLink: string): boolean =>
-  supposedLink.startsWith("http");
+	supposedLink.startsWith('http');
 
 /**
  * Checks if the user interacting with command interface has the Mod role.
@@ -17,14 +17,14 @@ export const isLink = (supposedLink: string): boolean =>
  * @return boolean
  */
 export const isMod = (interaction: DiscordInteraction | ButtonInteraction) => {
-  const modRole = getOption("modRole");
-  if (modRole && interaction.inGuild()) {
-    const isMod = (
-      interaction?.member.roles as GuildMemberRoleManager
-    ).cache.some((role: Role) => role.name === modRole);
-    return isMod;
-  }
-  return true;
+	const modRole = getOption('modRole');
+	if (modRole && interaction.inGuild()) {
+		const isMod = (
+			interaction?.member.roles as GuildMemberRoleManager
+		).cache.some((role: Role) => role.name === modRole);
+		return isMod;
+	}
+	return true;
 };
 
 /**
@@ -33,7 +33,7 @@ export const isMod = (interaction: DiscordInteraction | ButtonInteraction) => {
  * @return string
  */
 export const cenzor = (text: string) => {
-  return Array(text.length).fill("█").join("");
+	return Array(text.length).fill('█').join('');
 };
 
 /**
@@ -43,11 +43,11 @@ export const cenzor = (text: string) => {
  * @returns string
  */
 export const shortenString = (strFull: string, maxLength: number) => {
-  const str =
-    strFull.length >= maxLength
-      ? strFull.substring(0, maxLength - 4) + "..."
-      : strFull;
-  return str;
+	const str =
+		strFull.length >= maxLength
+			? strFull.substring(0, maxLength - 4) + '...'
+			: strFull;
+	return str;
 };
 
 /**
@@ -57,10 +57,10 @@ export const shortenString = (strFull: string, maxLength: number) => {
  * @returns
  */
 export const splitArrayToChunks = <T>(arr: T[], chunkSize: number) => {
-  const chunkArr: T[][] = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
-    const chunk: T[] = arr.slice(i, i + chunkSize);
-    chunkArr.push(chunk);
-  }
-  return chunkArr;
+	const chunkArr: T[][] = [];
+	for (let i = 0; i < arr.length; i += chunkSize) {
+		const chunk: T[] = arr.slice(i, i + chunkSize);
+		chunkArr.push(chunk);
+	}
+	return chunkArr;
 };

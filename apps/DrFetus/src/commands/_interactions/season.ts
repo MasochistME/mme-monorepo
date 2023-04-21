@@ -1,12 +1,12 @@
 import {
-  AutocompleteInteraction,
-  ApplicationCommandOptionChoiceData,
-} from "discord.js";
+	AutocompleteInteraction,
+	ApplicationCommandOptionChoiceData,
+} from 'discord.js';
 
 import {
-  getSeasonInactiveChoices,
-  getSeasonActiveChoices,
-} from "commands/_utils/season";
+	getSeasonInactiveChoices,
+	getSeasonActiveChoices,
+} from 'commands/_utils/season';
 
 /**
  * Handles autocompletion for searching an inactive season
@@ -14,18 +14,18 @@ import {
  * @return void
  */
 export const seasonInactiveAutocomplete = async (
-  interaction: AutocompleteInteraction,
+	interaction: AutocompleteInteraction,
 ): Promise<void> => {
-  if (!interaction.isAutocomplete()) return;
+	if (!interaction.isAutocomplete()) return;
 
-  let choices: ApplicationCommandOptionChoiceData[] = [];
+	let choices: ApplicationCommandOptionChoiceData[] = [];
 
-  const focused = interaction.options.getFocused(true);
+	const focused = interaction.options.getFocused(true);
 
-  if (focused.name === "season")
-    choices = getSeasonInactiveChoices(focused.value);
+	if (focused.name === 'season')
+		choices = getSeasonInactiveChoices(focused.value);
 
-  await interaction.respond(choices);
+	await interaction.respond(choices);
 };
 
 /**
@@ -34,16 +34,16 @@ export const seasonInactiveAutocomplete = async (
  * @return void
  */
 export const seasonActiveAutocomplete = async (
-  interaction: AutocompleteInteraction,
+	interaction: AutocompleteInteraction,
 ): Promise<void> => {
-  if (!interaction.isAutocomplete()) return;
+	if (!interaction.isAutocomplete()) return;
 
-  let choices: ApplicationCommandOptionChoiceData[] = [];
+	let choices: ApplicationCommandOptionChoiceData[] = [];
 
-  const focused = interaction.options.getFocused(true);
+	const focused = interaction.options.getFocused(true);
 
-  if (focused.name === "season")
-    choices = getSeasonActiveChoices(focused.value);
+	if (focused.name === 'season')
+		choices = getSeasonActiveChoices(focused.value);
 
-  await interaction.respond(choices);
+	await interaction.respond(choices);
 };
