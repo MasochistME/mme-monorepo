@@ -1,0 +1,5 @@
+{
+  "extends": "@masochistme/tsconfig/sdk.json",
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "**/*/__tests__"],
+}

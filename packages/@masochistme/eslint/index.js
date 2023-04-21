@@ -1,28 +1,28 @@
-{
-	"env": {
-		"node": true
+module.exports = {
+  env: {
+		node: true
 	},
-	"root": true,
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaFeatures": {
-		  "jsx": true
+	root: true,
+	parser: "@typescript-eslint/parser",
+	parserOptions: {
+		ecmaFeatures: {
+		  jsx: true
 		},
-		"ecmaVersion": "latest",
-		"sourceType": "module"
-	  },
-	"plugins": ["@typescript-eslint", "prettier"],
-	"extends": [
+		ecmaVersion: "latest",
+		sourceType: "module"
+	},
+	plugins: ["@typescript-eslint", "prettier"],
+	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
 		"prettier"
 	],
-	"rules": {
-		"prettier/prettier": "error",
+	rules: {
+		"prettier/prettier": "warn",
 		"no-useless-escape": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
 		"no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "_", "ignoreRestSiblings": true }]
 	}
-}
+};
