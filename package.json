@@ -8,6 +8,10 @@
     "tsc": "turbo run tsc",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "dependencies": {
     "mongodb": "^4.10.0"
   },
@@ -24,11 +28,5 @@
     "turbo": "latest",
     "typescript": "^4.8.4"
   },
-  "packageManager": "yarn@1.22.19",
-  "workspaces": {
-    "apps": "apps/*",
-    "packages": [
-      "packages/*"
-    ]
-  }
+  "packageManager": "yarn@1.22.19"
 }
