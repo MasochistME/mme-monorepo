@@ -1,5 +1,9 @@
 {
-  "extends": "@masochistme/tsconfig/fetus.json",
+  "extends": "../../tsconfig.base",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "rootDir": "./src"
+  },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"],
 }

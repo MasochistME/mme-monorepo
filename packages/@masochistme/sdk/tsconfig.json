@@ -1,5 +1,11 @@
 {
-  "extends": "@masochistme/tsconfig/sdk.json",
+  "extends": "../../../tsconfig.base",
+  "compilerOptions": {
+    "baseUrl": "./lib",
+    "rootDir": "./lib",
+    "isolatedModules": false,
+    "checkJs": true,
+  },
   "include": ["lib/**/*"],
   "exclude": ["node_modules", "**/*/__tests__"],
 }
