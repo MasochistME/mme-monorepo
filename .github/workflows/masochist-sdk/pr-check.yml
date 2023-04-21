@@ -1,8 +1,6 @@
-name: Main branch merge
+name: Pull request check
 
-on:
-  push:
-    branches: [main, master]
+on: pull_request
 
 jobs:
   build:
@@ -10,12 +8,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
 
@@ -29,4 +27,4 @@ jobs:
         run: yarn lint
 
       - name: Build
-        run: yarn build:prod
+        run: yarn build

@@ -1,4 +1,4 @@
-name: Release!
+name: Main branch merge
 
 on:
   push:
@@ -11,13 +11,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
 
@@ -31,13 +29,4 @@ jobs:
         run: yarn lint
 
       - name: Build
-        run: yarn build
-
-      - name: remove .npmrc
-        run: rm /home/runner/work/_temp/.npmrc
-
-      - name: NPM release
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: yarn build:prod

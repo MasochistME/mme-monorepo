@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
 
@@ -27,4 +27,4 @@ jobs:
         run: yarn lint
 
       - name: Build
-        run: yarn build:prod
+        run: yarn build:dev
