@@ -1,1 +1,0 @@
-export { updateMember } from './updateMember';
